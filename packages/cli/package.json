@@ -1,6 +1,6 @@
 {
 	"name": "@coffee-machine/cli",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Terminal interface for brewing coffee with interactive, realistic simulation",
 	"keywords": [
 		"coffee",

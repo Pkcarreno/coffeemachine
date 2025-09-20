@@ -1,8 +1,10 @@
 name: Publish Packages
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "cli-v*"
+      - "core-v*"
 
 jobs:
   publish:

@@ -58,9 +58,18 @@ jobs:
               ;;
           esac
 
+      - name: Build all workspaces
+        run: pnpm -r build
+
       - name: Publish to npm
         working-directory: ${{ steps.detect.outputs.path }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          pnpm publish --no-git-checks --access=public
+          NAME=$(node -p "require('./package.json').name")
+          VER=$(node -p "require('./package.json').version")
+          if npm view "$NAME@$VER" version >/dev/null 2>&1; then
+            echo "$NAME@$VER already exists on npm. Skipping publish."
+            exit 0
+          fi
+          npm publish --provenance --access public

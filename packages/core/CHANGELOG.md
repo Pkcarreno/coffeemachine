@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.1.0...core-v1.1.1) (2025-09-20)
+
+
+### Bug Fixes
+
+* **core:** update core description ([93167ac](https://github.com/Pkcarreno/coffeemachine/commit/93167accdd91a03986403e13b68eb942dae68074))
+
 ## [1.1.0](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.0.0...core-v1.1.0) (2025-09-20)
 
 

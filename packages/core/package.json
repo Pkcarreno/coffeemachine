@@ -1,6 +1,6 @@
 {
 	"name": "@coffee-machine/core",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Core abstractions and implementations for building realistic coffee machine simulations in TypeScript",
 	"keywords": [
 		"coffee",

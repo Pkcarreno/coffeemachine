@@ -1,11 +1,11 @@
 {
-  "separate-pull-requests": true,
-  "packages": {
-    "packages/cli": {
-      "component": "@coffee-machine/cli"
-    },
-    "packages/core": {
-      "component": "@coffee-machine/core"
-    }
-  }
+	"separate-pull-requests": true,
+	"packages": {
+		"packages/cli": {
+			"component": "@coffee-machine/cli"
+		},
+		"packages/core": {
+			"component": "@coffee-machine/core"
+		}
+	}
 }

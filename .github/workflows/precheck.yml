@@ -65,6 +65,9 @@ jobs:
       - name: 📦 Setup Node + PNPM + install deps
         uses: ./.github/actions/setup-node-pnpm-install
 
+      - name: 📦 Build Core package
+        run: pnpm --filter @coffee-machine/core build
+
       - name: 📦 Install Reviewdog
         if: github.event_name == 'pull_request'
         uses: reviewdog/action-setup@v1

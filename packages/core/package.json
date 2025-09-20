@@ -1,6 +1,14 @@
 {
 	"name": "@coffee-machine/core",
 	"version": "1.1.0",
+	"description": "Core abstractions and implementations for building realistic coffee machine simulations in TypeScript",
+	"keywords": [
+		"coffee",
+		"simulator",
+		"typescript",
+		"abstractions",
+		"espresso"
+	],
 	"author": "Pedro Carreño (34664891+Pkcarreno@users.noreply.github.com)",
 	"type": "module",
 	"exports": {

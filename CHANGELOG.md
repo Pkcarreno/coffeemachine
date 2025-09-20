@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Pkcarreno/coffeemachine/compare/v1.0.0...v1.0.1) (2025-09-20)
+
+
+### Bug Fixes
+
+* **actions:** release please config file name ([1ab98c5](https://github.com/Pkcarreno/coffeemachine/commit/1ab98c5870f92bb38fc4d4402a3a4ac4480a6bbd))
+
 ## 1.0.0 (2025-09-20)
 
 

@@ -1,0 +1,41 @@
+{
+  "name": "@coffee-machine/core",
+  "version": "1.0.0",
+  "author": "Pedro Carreño (34664891+Pkcarreno@users.noreply.github.com)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/core\\index.js",
+      "require": "./dist/core\\index.cjs"
+    },
+    "./machines": {
+      "import": "./dist/machines\\index.js",
+      "require": "./dist/machines\\index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "prepublishOnly": "build",
+    "typecheck": "tsc --noEmit --project tsconfig.json",
+    "test": "vitest",
+    "example:espresso": "tsx ./src/examples/espresso.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@sinonjs/fake-timers": "^14.0.0",
+    "@types/sinonjs__fake-timers": "^8.1.5",
+    "tsdown": "^0.15.2",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkcarreno/coffeemachine.git"
+  }
+}

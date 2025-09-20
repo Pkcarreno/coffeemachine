@@ -1,0 +1,29 @@
+{
+  "name": "@coffee-machine/cli",
+  "version": "1.0.0",
+  "author": "Pedro Carreño (34664891+Pkcarreno@users.noreply.github.com)",
+  "type": "module",
+  "bin": {
+    "coffeeMachine": "dist/index.js",
+    "cfm": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsdown",
+    "prepublishOnly": "build",
+    "typecheck": "tsc --noEmit --project tsconfig.json",
+    "execute": "tsx index.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "@coffee-machine/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkcarreno/coffeemachine.git"
+  }
+}

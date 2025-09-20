@@ -1,0 +1,39 @@
+name: Publish Packages
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Necesario para detectar cambios entre tags
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Detect changed packages and publish
+        run: |
+          LATEST_TAG=$GITHUB_REF_NAME
+          PACKAGE_NAME=$(echo "$LATEST_TAG" | sed -E 's/-v[0-9]+\.[0-9]+\.[0-9]+$//')
+
+          echo "Detected package: $PACKAGE_NAME"
+
+          pnpm --filter "./packages/$PACKAGE_NAME" publish --no-git-checks --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

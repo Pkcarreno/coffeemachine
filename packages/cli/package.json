@@ -1,6 +1,6 @@
 {
 	"name": "@coffee-machine/cli",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"author": "Pedro Carreño (34664891+Pkcarreno@users.noreply.github.com)",
 	"type": "module",
 	"bin": {

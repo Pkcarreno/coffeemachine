@@ -1,11 +1,19 @@
 {
+	"include-component-in-tag": true,
+	"include-v-in-tag": true,
+	"tag-separator": "@",
 	"separate-pull-requests": true,
 	"packages": {
 		"packages/cli": {
-			"component": "@coffee-machine/cli"
+			"component": "@coffee-machine/cli",
+			"path": "packages/cli",
+			"release-type": "node"
 		},
 		"packages/core": {
-			"component": "@coffee-machine/core"
+			"component": "@coffee-machine/core",
+			"path": "packages/core",
+			"release-type": "node"
 		}
-	}
+	},
+	"$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
 }

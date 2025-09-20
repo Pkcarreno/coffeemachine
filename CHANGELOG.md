@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.2](https://github.com/Pkcarreno/coffeemachine/compare/v1.0.1...v1.0.2) (2025-09-20)
+
+
+### Bug Fixes
+
+* **actions:** expand release please config ([3d917c7](https://github.com/Pkcarreno/coffeemachine/commit/3d917c780d7a539ba43f0f2f5219519793c2793c))
+* **actions:** expand release please config ([6798ca0](https://github.com/Pkcarreno/coffeemachine/commit/6798ca0e157a1343844551e6c66b1b80941d06e7))
+
 ## [1.0.1](https://github.com/Pkcarreno/coffeemachine/compare/v1.0.0...v1.0.1) (2025-09-20)
 
 

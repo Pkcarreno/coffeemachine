@@ -36,36 +36,53 @@ jobs:
           echo "prs_created=${{ steps.rp.outputs.prs_created }}"
           echo "tags_created=${{ steps.rp.outputs.tags_created }}"
 
+      - name: Compute should_publish
+        id: gates
+        run: |
+          PR="${{ steps.rp.outputs.prs_created }}"
+          REL="${{ steps.rp.outputs.releases_created }}"
+          PATHS='${{ steps.rp.outputs.paths_released }}'
+          if [ "$PATHS" = "" ] || [ "$PATHS" = "[]" ] || [ "$PATHS" = "null" ]; then
+            echo "paths_clean=" >> $GITHUB_OUTPUT
+          else
+            echo "paths_clean=$PATHS" >> $GITHUB_OUTPUT
+          fi
+          if [ "$REL" = "true" ] || [ "$PR" = "true" ] || [ ! -z "$PATHS" ] && [ "$PATHS" != "[]" ] && [ "$PATHS" != "null" ]; then
+            echo "publish=true" >> $GITHUB_OUTPUT
+          else
+            echo "publish=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Skip if nothing released
-        if: ${{ steps.rp.outputs.paths_released == '' }}
-        run: echo "No packages released in this run. Skipping publish."
+        if: ${{ steps.gates.outputs.publish == 'false' }}
+        run: echo "No packages released in this run. Skipping publish." && exit 0
 
       - uses: actions/checkout@v4
-        if: ${{ steps.rp.outputs.paths_released != '' }}
+        if: ${{ steps.gates.outputs.publish == 'true' }}
         with:
           fetch-depth: 0
           ref: ${{ github.event.release.tag_name }}
 
       - uses: pnpm/action-setup@v4
-        if: ${{ steps.rp.outputs.paths_released != '' }}
+        if: ${{ steps.gates.outputs.publish == 'true' }}
 
       - uses: actions/setup-node@v4
-        if: ${{ steps.rp.outputs.paths_released != '' }}
+        if: ${{ steps.gates.outputs.publish == 'true' }}
         with:
           node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
           cache: "pnpm"
 
       - name: Install dependencies
-        if: ${{ steps.rp.outputs.paths_released != '' }}
+        if: ${{ steps.gates.outputs.publish == 'true' }}
         run: pnpm install --frozen-lockfile
 
       - name: Build all packages
-        if: ${{ steps.rp.outputs.paths_released != '' }}
+        if: ${{ steps.gates.outputs.publish == 'true' }}
         run: pnpm -r build
 
       - name: Publish @coffee-machine/cli
-        if: ${{ contains(steps.rp.outputs.paths_released, 'packages/cli' ) }}
+        if: ${{ steps.gates.outputs.publish == 'true' && contains(steps.rp.outputs.paths_released, 'packages/cli' ) }}
         working-directory: packages/cli
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -73,7 +90,7 @@ jobs:
           npm publish --provenance --access public
 
       - name: Publish @coffee-machine/core
-        if: ${{ contains(steps.rp.outputs.paths_released, 'packages/core' ) }}
+        if: ${{ steps.gates.outputs.publish == 'true' && contains(steps.rp.outputs.paths_released, 'packages/core' ) }}
         working-directory: packages/core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

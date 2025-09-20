@@ -9,6 +9,10 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   prepare:
     uses: ./.github/workflows/precheck.yml
@@ -16,9 +20,6 @@ jobs:
   release:
     runs-on: ubuntu-latest
     needs: [prepare]
-    permissions:
-      contents: write
-      pull-requests: write
     steps:
       - name: Release Please
         uses: googleapis/release-please-action@v4
@@ -27,3 +28,54 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
+
+      - name: Debug outputs
+        run: |
+          echo "releases_created=${{ steps.rp.outputs.releases_created }}"
+          echo "paths_released=${{ steps.rp.outputs.paths_released }}"
+          echo "prs_created=${{ steps.rp.outputs.prs_created }}"
+          echo "tags_created=${{ steps.rp.outputs.tags_created }}"
+
+      - name: Skip if nothing released
+        if: ${{ steps.rp.outputs.paths_released == '' }}
+        run: echo "No packages released in this run. Skipping publish."
+
+      - uses: actions/checkout@v4
+        if: ${{ steps.rp.outputs.paths_released != '' }}
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.release.tag_name }}
+
+      - uses: pnpm/action-setup@v4
+        if: ${{ steps.rp.outputs.paths_released != '' }}
+
+      - uses: actions/setup-node@v4
+        if: ${{ steps.rp.outputs.paths_released != '' }}
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        if: ${{ steps.rp.outputs.paths_released != '' }}
+        run: pnpm install --frozen-lockfile
+
+      - name: Build all packages
+        if: ${{ steps.rp.outputs.paths_released != '' }}
+        run: pnpm -r build
+
+      - name: Publish @coffee-machine/cli
+        if: ${{ contains(steps.rp.outputs.paths_released, 'packages/cli' ) }}
+        working-directory: packages/cli
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm publish --provenance --access public
+
+      - name: Publish @coffee-machine/core
+        if: ${{ contains(steps.rp.outputs.paths_released, 'packages/core' ) }}
+        working-directory: packages/core
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm publish --provenance --access public

@@ -7,7 +7,8 @@
 		"cli",
 		"terminal",
 		"simulator",
-		"espresso"
+		"espresso",
+		"machines"
 	],
 	"author": "Pedro Carreño (34664891+Pkcarreno@users.noreply.github.com)",
 	"type": "module",

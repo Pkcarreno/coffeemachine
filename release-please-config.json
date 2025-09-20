@@ -1,17 +1,15 @@
 {
 	"include-component-in-tag": true,
-	"include-v-in-tag": true,
-	"tag-separator": "@",
 	"separate-pull-requests": true,
+	"plugins": ["node-workspace"],
+	"release-type": "node",
 	"packages": {
 		"packages/cli": {
-			"component": "@coffee-machine/cli",
-			"path": "packages/cli",
+			"package-name": "@coffee-machine/cli",
 			"release-type": "node"
 		},
 		"packages/core": {
-			"component": "@coffee-machine/core",
-			"path": "packages/core",
+			"package-name": "@coffee-machine/core",
 			"release-type": "node"
 		}
 	},

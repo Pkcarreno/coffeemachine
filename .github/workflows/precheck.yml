@@ -52,7 +52,7 @@ jobs:
       - name: 🏃‍♂️ Run Lint & Format PR
         run: pnpm test
 
-  type-check:
+  typecheck:
     name: TypeCheck
     needs: [install]
     runs-on: ubuntu-latest
@@ -73,12 +73,12 @@ jobs:
         # We only need to add the reviewdog step if it's a pull request
         if: github.event_name == 'pull_request'
         run: |
-          pnpm type-check | reviewdog -name="tsc" -efm="%f(%l,%c): error TS%n: %m" -reporter="github-pr-review" -filter-mode="nofilter" -fail-on-error -tee
+          pnpm typecheck | reviewdog -name="tsc" -efm="%f(%l,%c): error TS%n: %m" -reporter="github-pr-review" -filter-mode="nofilter" -fail-on-error -tee
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name:
           🏃‍♂️ Run TypeScript Commit
-          # If it's not a Pull Request then we just need to run the type-check
+          # If it's not a Pull Request then we just need to run the typecheck
         if: github.event_name != 'pull_request'
-        run: pnpm type-check
+        run: pnpm typecheck

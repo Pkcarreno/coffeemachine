@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Pkcarreno/coffeemachine/compare/cli-v1.1.0...cli-v1.1.1) (2025-09-20)
+
+
+### Bug Fixes
+
+* **cli:** add keyword ([69da555](https://github.com/Pkcarreno/coffeemachine/commit/69da55529e9ff5bb1b830b5cd71eb99d853dfb00))
+
 ## [1.1.0](https://github.com/Pkcarreno/coffeemachine/compare/cli-v1.0.0...cli-v1.1.0) (2025-09-20)
 
 

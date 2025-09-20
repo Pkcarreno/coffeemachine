@@ -26,9 +26,9 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@sinonjs/fake-timers": "^14.0.0",
+    "@sinonjs/fake-timers": "^15.0.0",
     "@types/sinonjs__fake-timers": "^8.1.5",
-    "tsdown": "^0.15.2",
+    "tsdown": "^0.15.3",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {

@@ -30,10 +30,11 @@ jobs:
       - name: Detect changed packages and publish
         run: |
           LATEST_TAG=$GITHUB_REF_NAME
-          PACKAGE_NAME=$(echo "$LATEST_TAG" | sed -E 's/-v[0-9]+\.[0-9]+\.[0-9]+$//')
+          COMPONENT_NAME=$(echo "$LATEST_TAG" | sed -E 's/-v[0-9]+\.[0-9]+\.[0-9]+$//')
 
-          echo "Detected package: $PACKAGE_NAME"
+          echo "Detected package: $COMPONENT_NAME"
 
-          pnpm --filter "./packages/$PACKAGE_NAME" publish --no-git-checks --access=public
+
+          pnpm --filter "$COMPONENT_NAME" publish --no-git-checks --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

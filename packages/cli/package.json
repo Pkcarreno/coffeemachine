@@ -1,6 +1,14 @@
 {
 	"name": "@coffee-machine/cli",
 	"version": "1.1.0",
+	"description": "Terminal interface for brewing coffee with interactive, realistic simulation",
+	"keywords": [
+		"coffee",
+		"cli",
+		"terminal",
+		"simulator",
+		"espresso"
+	],
 	"author": "Pedro Carreño (34664891+Pkcarreno@users.noreply.github.com)",
 	"type": "module",
 	"bin": {

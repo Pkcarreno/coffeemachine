@@ -1,5 +1,12 @@
 {
 	"name": "coffeemachine",
+	"description": "A TypeScript monorepo for simulating realistic coffee machines - includes core abstractions and CLI tools",
+	"keywords": [
+		"coffee",
+		"simulator",
+		"typescript",
+		"monorepo"
+	],
 	"author": "Pedro Carreño (34664891+Pkcarreno@users.noreply.github.com)",
 	"devDependencies": {
 		"typescript": "^5"

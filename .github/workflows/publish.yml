@@ -15,6 +15,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Debug tag and tree
+        run: |
+          echo "Release tag: ${{ github.event.release.tag_name }}"
+          pwd
+          git rev-parse HEAD
+          ls -la
+          ls -la package || true
+          ls -la package/cli || true
+          ls -la package/core || true
 
       - uses: pnpm/action-setup@v4
 
@@ -33,11 +44,11 @@ jobs:
           TAG="${{ github.event.release.tag_name }}"
           COMPONENT="${TAG%%-v*}"
           case "$COMPONENT" in
-            package/cli|cli)
+            cli)
               echo "path=package/cli" >> $GITHUB_OUTPUT
               echo "name=@coffee-machine/cli" >> $GITHUB_OUTPUT
               ;;
-            package/core|core)
+            core)
               echo "path=package/core" >> $GITHUB_OUTPUT
               echo "name=@coffee-machine/core" >> $GITHUB_OUTPUT
               ;;

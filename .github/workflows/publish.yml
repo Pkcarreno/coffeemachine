@@ -24,8 +24,8 @@ jobs:
           git rev-parse HEAD
           ls -la
           ls -la package || true
-          ls -la package/cli || true
-          ls -la package/core || true
+          ls -la packages/cli || true
+          ls -la packages/core || true
 
       - uses: pnpm/action-setup@v4
 
@@ -45,11 +45,11 @@ jobs:
           COMPONENT="${TAG%%-v*}"
           case "$COMPONENT" in
             cli)
-              echo "path=package/cli" >> $GITHUB_OUTPUT
+              echo "path=packages/cli" >> $GITHUB_OUTPUT
               echo "name=@coffee-machine/cli" >> $GITHUB_OUTPUT
               ;;
             core)
-              echo "path=package/core" >> $GITHUB_OUTPUT
+              echo "path=packages/core" >> $GITHUB_OUTPUT
               echo "name=@coffee-machine/core" >> $GITHUB_OUTPUT
               ;;
             *)

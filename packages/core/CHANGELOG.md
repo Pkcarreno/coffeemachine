@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.1.1...core-v1.1.2) (2025-09-20)
+
+
+### Bug Fixes
+
+* **core:** add keyword ([f5b60f8](https://github.com/Pkcarreno/coffeemachine/commit/f5b60f8dc41916a8a4121512a2db743b8b973c88))
+
 ## [1.1.1](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.1.0...core-v1.1.1) (2025-09-20)
 
 

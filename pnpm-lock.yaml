@@ -21,15 +21,16 @@ importers:
 
   packages/cli:
     dependencies:
+      typescript:
+        specifier: ^5
+        version: 5.9.2
+    devDependencies:
       '@clack/prompts':
         specifier: ^0.11.0
         version: 0.11.0
       '@coffee-machine/core':
         specifier: workspace:*
         version: link:../core
-      typescript:
-        specifier: ^5
-        version: 5.9.2
 
   packages/core:
     dependencies:

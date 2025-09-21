@@ -24,7 +24,7 @@
 		"execute": "tsx index.ts"
 	},
 	"license": "MIT",
-	"dependencies": {
+	"devDependencies": {
 		"@clack/prompts": "^0.11.0",
 		"@coffee-machine/core": "workspace:*"
 	},

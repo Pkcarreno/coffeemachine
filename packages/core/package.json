@@ -14,14 +14,25 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/core\\index.js",
-			"require": "./dist/core\\index.cjs"
+			"import": {
+				"types": "./dist/core/index.d.ts",
+				"default": "./dist/core/index.js"
+			},
+			"require": {
+				"types": "./dist/core/index.d.cts",
+				"default": "./dist/core/index.cjs"
+			}
 		},
 		"./machines": {
-			"import": "./dist/machines\\index.js",
-			"require": "./dist/machines\\index.cjs"
-		},
-		"./package.json": "./package.json"
+			"import": {
+				"types": "./dist/machines/index.d.ts",
+				"default": "./dist/machines/index.js"
+			},
+			"require": {
+				"types": "./dist/machines/index.d.cts",
+				"default": "./dist/machines/index.cjs"
+			}
+		}
 	},
 	"scripts": {
 		"build": "tsdown",

@@ -6,12 +6,8 @@ export default defineConfig({
 	platform: "node",
 	target: "node20",
 	sourcemap: true,
-	noExternal: [
-		"@coffee-machine/core",
-		"@coffee-machine/core/machines",
-		"@clack/prompts",
-	],
-	external: [],
 	tsconfig: "tsconfig.json",
-	clean: true,
+	banner: {
+		js: "#!/usr/bin/env node",
+	},
 });

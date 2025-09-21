@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.1.3...core-v1.1.4) (2025-09-21)
+
+
+### Bug Fixes
+
+* **core:** remove prepublishOnly command ([6f1e370](https://github.com/Pkcarreno/coffeemachine/commit/6f1e3708d6e370719f290c188ea20b5890bdfded))
+
 ## [1.1.3](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.1.2...core-v1.1.3) (2025-09-21)
 
 

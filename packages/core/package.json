@@ -7,8 +7,7 @@
 		"simulator",
 		"typescript",
 		"abstractions",
-		"espresso",
-		"machines"
+		"espresso"
 	],
 	"author": "Pedro Carreño (34664891+Pkcarreno@users.noreply.github.com)",
 	"type": "module",

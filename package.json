@@ -7,18 +7,19 @@
 		"typescript",
 		"monorepo"
 	],
+	"type": "module",
 	"author": "Pedro Carreño (34664891+Pkcarreno@users.noreply.github.com)",
 	"devDependencies": {
 		"typescript": "^5"
 	},
 	"private": true,
 	"scripts": {
-		"check": "biome check .",
+		"check": "biome check",
 		"lint": "biome lint",
 		"format": "biome format",
-		"build": "pnpm -r run build",
-		"typecheck": "pnpm -r run typecheck",
-		"test": "pnpm -r run test"
+		"build": "pnpm  -r build",
+		"typecheck": "pnpm -r typecheck",
+		"test": "pnpm -r test"
 	},
 	"dependencies": {
 		"@biomejs/biome": "^2.2.4",

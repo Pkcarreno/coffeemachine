@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/Pkcarreno/coffeemachine/compare/cli-v1.1.3...cli-v1.1.4) (2025-09-21)
+
+
+### Bug Fixes
+
+* **cli:** edit repo url ([83ad9d8](https://github.com/Pkcarreno/coffeemachine/commit/83ad9d8f7b3e887a43093a8bfe8eaa4e593784bb))
+
 ## [1.1.3](https://github.com/Pkcarreno/coffeemachine/compare/cli-v1.1.2...cli-v1.1.3) (2025-09-21)
 
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.3](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.1.2...core-v1.1.3) (2025-09-21)
+
+
+### Bug Fixes
+
+* **core:** exports declarations ([dd93c6a](https://github.com/Pkcarreno/coffeemachine/commit/dd93c6aa1af43973a248e276c3f38b0da3a2ffef))
+* **core:** extends tsconfig with global one ([51d6fc9](https://github.com/Pkcarreno/coffeemachine/commit/51d6fc9d9de42c625277bd67c99f4c7b3fdfd1d4))
+* **core:** tsdown config ([3bbaf44](https://github.com/Pkcarreno/coffeemachine/commit/3bbaf44a2647dbea6430c0a310fc2057ea4fdbd4))
+
 ## [1.1.2](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.1.1...core-v1.1.2) (2025-09-20)
 
 

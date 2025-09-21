@@ -31,6 +31,6 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/pkcarreno/coffeemachine.git"
+		"url": "https://github.com/Pkcarreno/coffeemachine"
 	}
 }

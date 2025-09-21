@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.6](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.1.5...core-v1.1.6) (2025-09-21)
+
+
+### Bug Fixes
+
+* **cli:** edit repo url ([b68ca8a](https://github.com/Pkcarreno/coffeemachine/commit/b68ca8ae945056bd9bfe0207e08481b8b0943a13))
+
 ## [1.1.5](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.1.4...core-v1.1.5) (2025-09-21)
 
 

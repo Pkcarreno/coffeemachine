@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.2](https://github.com/Pkcarreno/coffeemachine/compare/cli-v1.1.1...cli-v1.1.2) (2025-09-21)
+
+
+### Bug Fixes
+
+* **cli:** extend tsconfig with global one ([05fd01d](https://github.com/Pkcarreno/coffeemachine/commit/05fd01dd6732c9cd5c7a7a33d2fee44bf864dd9f))
+* **cli:** move deps to devDeps ([8996edd](https://github.com/Pkcarreno/coffeemachine/commit/8996edd2a876e6e3b078d1b976cc3ee1dae72ab0))
+* **cli:** remove prepublishOnly command ([fb01c38](https://github.com/Pkcarreno/coffeemachine/commit/fb01c3850f89ef768e35fdc68b8cd9d3860f4389))
+* **cli:** tsdown config ([30fbace](https://github.com/Pkcarreno/coffeemachine/commit/30fbaceea8849c0fdba8f2c3f05ba368ee772c81))
+
 ## [1.1.1](https://github.com/Pkcarreno/coffeemachine/compare/cli-v1.1.0...cli-v1.1.1) (2025-09-20)
 
 

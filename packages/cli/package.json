@@ -19,7 +19,6 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "tsdown",
-		"prepublishOnly": "build",
 		"typecheck": "tsc --noEmit --project tsconfig.json",
 		"execute": "tsx index.ts"
 	},

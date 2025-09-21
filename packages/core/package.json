@@ -36,7 +36,6 @@
 	},
 	"scripts": {
 		"build": "tsdown",
-		"prepublishOnly": "build",
 		"typecheck": "tsc --noEmit --project tsconfig.json",
 		"test": "vitest",
 		"example:espresso": "tsx ./src/examples/espresso.ts"

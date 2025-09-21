@@ -1,15 +1,7 @@
 {
+	"extends": "../../tsconfig.base.json",
 	"compilerOptions": {
-		"target": "ES2022",
-		"module": "ESNext",
-		"moduleResolution": "Bundler",
-		"strict": true,
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"sourceMap": true,
-		"outDir": "dist"
+		"composite": true
 	},
 	"include": ["machines", "./index.ts"]
 }

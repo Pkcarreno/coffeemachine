@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.7](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.1.6...core-v1.1.7) (2025-09-29)
+
+
+### Bug Fixes
+
+* **core:** add variance to coffee entity ([bb43b37](https://github.com/Pkcarreno/coffeemachine/commit/bb43b371e43ba69f897e9f3569e1f72a4ebe21d4))
+* **core:** normal distribution formula ([0fc4420](https://github.com/Pkcarreno/coffeemachine/commit/0fc442014996aea50b203bc3bcafe751af958eff))
+
 ## [1.1.6](https://github.com/Pkcarreno/coffeemachine/compare/core-v1.1.5...core-v1.1.6) (2025-09-21)
 
 

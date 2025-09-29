@@ -1,3 +1,5 @@
+import { Variance } from "../services/variance";
+
 export enum CoffeeType {
 	ARABICA = "arabica",
 	ROBUSTA = "robusta",
@@ -41,7 +43,9 @@ export class Coffee {
 	}) {
 		this.type = args.type;
 		this.seed = args.seed;
-		this.actualWeightG = args.nominalWeightG;
+		this.actualWeightG = Variance.applyWeightVarianceG(args.nominalWeightG, {
+			seed: args.seed,
+		});
 		this.nominalWeightG = args.nominalWeightG;
 		this.grindSize = args.grindSize;
 	}

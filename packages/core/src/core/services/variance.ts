@@ -64,7 +64,7 @@ export class Variance {
 		const u2 =
 			seed !== undefined ? Variance.seededRandom(seed + 1) : Math.random();
 		const z = Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
-		return mean + mean * variance * z;
+		return mean + Math.sqrt(variance) * z;
 	}
 
 	private static uniformDistribution(args: {
@@ -115,7 +115,7 @@ export class Variance {
 	): number {
 		const {
 			variance = 0.02,
-			distribution = DistributionType.TRIANGULAR,
+			distribution = DistributionType.NORMAL,
 			seed,
 		} = args || {};
 
